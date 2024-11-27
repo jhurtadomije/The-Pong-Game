@@ -1,0 +1,182 @@
+/* Estilos base */
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Tamaño de fuente adaptativo */
+}
+
+/* Cronómetro */
+#cronometro {
+    font-size: 1.2rem; /* Adaptativo */
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 10px; /* Espacio entre el cronómetro y el marcador */
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, rgba(255, 111, 97, 1), rgba(255, 178, 77, 1));
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+    width: 90%; /* Ajustable para móviles */
+    max-width: 400px; /* Limitar ancho en pantallas grandes */
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #ff6f61;
+}
+
+/* Marcador */
+#marcador {
+    display: flex;
+    flex-wrap: wrap; /* Permite reorganizar los elementos en pantallas pequeñas */
+    justify-content: center;
+    gap: 10px; /* Espaciado automático entre elementos */
+    width: 90%;
+    max-width: 500px;
+    margin-top: 10px;
+    font-size: 1.5rem; /* Adaptativo */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f7f7f7;
+}
+
+/* Estilo de puntuación individual */
+#puntuacion1, #puntuacion2 {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff6f61, #ffb24d);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto hover en las puntuaciones */
+#puntuacion1:hover, #puntuacion2:hover {
+    background: linear-gradient(45deg, #ffb24d, #ff6f61);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* SVG (campo de juego) */
+svg {
+    width: 90%; /* Adapta el ancho a la pantalla */
+    max-width: 500px; /* Límite para pantallas grandes */
+    aspect-ratio: 1; /* Mantiene una forma cuadrada */
+    background-color: #121212;
+    border: 2px solid #444;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Línea central */
+#linea-central {
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 10, 10;
+}
+
+/* Círculo central */
+#circulo-central {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+}
+
+/* Paletas */
+rect {
+    fill: #f7f7f7;
+    transition: transform 0.1s ease-in-out;
+}
+
+rect:hover {
+    transform: scale(1.1);
+}
+
+/* Botón de reiniciar */
+#reiniciarBtn {
+    width: 80%; /* Ajusta el ancho */
+    max-width: 300px;
+    padding: 10px 15px;
+    background: linear-gradient(45deg, #ff6f61, #ffb24d);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2rem; /* Adaptativo */
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: none; /* Oculto inicialmente */
+    margin-top: 20px;
+}
+
+#reiniciarBtn:hover {
+    background: linear-gradient(45deg, #ffb24d, #ff6f61);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+#reiniciarBtn:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.8);
+}
+
+/* Pie de página */
+footer {
+    background-color: #121212;
+    color: #f7f7f7;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.copy {
+    font-size: 0.8rem; /* Ajustado para móviles */
+    color: #888;
+}
+
+.copy a {
+    color: #f7f7f7;
+    text-decoration: none;
+}
+
+.copy a:hover {
+    text-decoration: underline;
+}
+
+/* Medios Responsivos */
+@media (max-width: 600px) {
+    #cronometro {
+        font-size: 1rem;
+        padding: 10px;
+        letter-spacing: 2px;
+    }
+
+    #puntuacion1, #puntuacion2 {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+
+    svg {
+        width: 95%; /* Ocupa casi todo el ancho */
+    }
+
+    #reiniciarBtn {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+
+    footer {
+        font-size: 0.7rem;
+    }
+}
